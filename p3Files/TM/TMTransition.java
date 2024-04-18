@@ -1,5 +1,3 @@
-package TM;
-
 /**
  * TMTransition represents a transition from one state to another
  * for a turing machine. Each turing transition contains
@@ -8,7 +6,7 @@ package TM;
  *
  * @author johngarcia joshmartin
  */
-public class TMTransistion {
+public class TMTransition {
     private String nextState;
     private String writeState;
     private char move;
@@ -22,7 +20,7 @@ public class TMTransistion {
      * @param writeState
      * @param move
      */
-    public TMTransistion(String nextState, String writeState, char move) {
+    public TMTransition(String nextState, String writeState, char move) {
         this.nextState = nextState;
         this.writeState = writeState;
         this.move = move;

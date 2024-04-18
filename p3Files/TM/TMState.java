@@ -1,5 +1,3 @@
-package TM;
-
 import java.util.LinkedHashMap;
 
 public class TMState extends State {
