@@ -1,15 +1,16 @@
+package TM;
+
 /**
  * TMTransition represents a transition from one state to another
  * for a turing machine. Each turing transition contains
- * next_state, write_state, move. A separate class is needed
- * to encapsulate this data to assist in entirety of the TM
+ * next_state, write_state, move.
  *
  * @author johngarcia joshmartin
  */
 public class TMTransition {
-    private String nextState;
-    private String writeState;
-    private char move;
+    private int nextState;
+    private int writeState;
+    private Character move;
 
     /**
      * Constructor for a turing machine transition. Contains
@@ -20,7 +21,7 @@ public class TMTransition {
      * @param writeState
      * @param move
      */
-    public TMTransition(String nextState, String writeState, char move) {
+    public TMTransition(int nextState, int writeState, Character move) {
         this.nextState = nextState;
         this.writeState = writeState;
         this.move = move;
@@ -31,7 +32,7 @@ public class TMTransition {
      *
      * @return
      */
-    public String getNextState() {
+    public int getNextState() {
         return nextState;
     }
 
@@ -40,7 +41,7 @@ public class TMTransition {
      *
      * @return
      */
-    public String getWriteState() {
+    public int getWriteState() {
         return writeState;
     }
 
@@ -49,7 +50,7 @@ public class TMTransition {
      *
      * @return
      */
-    public char move() {
+    public Character getMove() {
         return move;
     }
 }
