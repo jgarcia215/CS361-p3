@@ -22,8 +22,8 @@ avoided any merge conflicts. Overall, it was a challenging project but enjoyable
 
 ## Compiling and Using
 
-To compile TMSimulator.java, use this command: javac -cp .:/usr/share/java/junit.jar ./p3Files/TM/TMSimulator.java
-To run TMSimulator.java use this command: java -cp .:/usr/share/java/junit.jar:/usr/share/java/hamcrest/core.jar org.junit.runner.JUnitCore ./p3Files/TM/TMSimulator.java
+To compile TMSimulator.java, navigate to the directory TM and execute: 'javac *.java'
+To run TMSimulator.java, ensure you are in the directory TM. run: 'java TMSimulator.java <path to txt file>'
 
 ## Sources used
 
