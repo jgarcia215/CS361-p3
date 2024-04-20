@@ -5,7 +5,7 @@ package TM;
  * for a turing machine. Each turing transition contains
  * next_state, write_state, move.
  *
- * @author johngarcia joshmartin
+ * @author johngarcia joshmiller
  */
 public class TMTransition {
     private int nextState;
@@ -30,7 +30,7 @@ public class TMTransition {
     /**
      * Returns nextState
      *
-     * @return
+     * @return nextState
      */
     public int getNextState() {
         return nextState;
@@ -39,7 +39,7 @@ public class TMTransition {
     /**
      * Returns writeState
      *
-     * @return
+     * @return writeState
      */
     public int getWriteState() {
         return writeState;
@@ -48,7 +48,7 @@ public class TMTransition {
     /**
      * Returns move
      *
-     * @return
+     * @return move direction
      */
     public Character getMove() {
         return move;

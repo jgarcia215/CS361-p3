@@ -4,20 +4,31 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+/**
+ * TMSimulator which is a driver for our turing machine. Simulates
+ * a turing machine with a tape and various transitions.
+ *
+ * @author jackgarcia joshmiller
+ */
 public class TMSimulator {
 
     private static int numStates;
     private static int alphabet;
 
+    /**
+     * Main method which call upon our
+     * TM simulator.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             if (args.length != 1) {
                 System.out.println("Usage: java TMSimulator.java <inputFilePath>");
-                System.exit(1);
             }
 
             String file = args[0];
-            simulate(file);
+            tmSimulate(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,7 +40,7 @@ public class TMSimulator {
      * @param file
      * @throws IOException
      */
-    public static void simulate(String file) throws IOException {
+    public static void tmSimulate(String file) throws IOException {
         BufferedReader br;
 
         try {

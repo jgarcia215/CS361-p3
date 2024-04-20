@@ -3,8 +3,11 @@ package TM;
 import java.util.ArrayList;
 
 /**
+ * Represents a turing machine. Contains a tape which
+ * has the ability to move left and right and is also
+ * capable off adding transitions.
  *
- *
+ * @author jackgarcia joshmiller
  */
 public class TM {
 
@@ -14,6 +17,12 @@ public class TM {
     private int currIndex;
     private int tapeIndex;
 
+    /**
+     * Constructor for TM
+     *
+     * @param numStates
+     * @param alphabet
+     */
     public TM(int numStates, int alphabet) {
         this.numStates = numStates;
         tape = new ArrayList<>();
@@ -58,7 +67,8 @@ public class TM {
     }
 
     /**
-     *
+     * Initializes the tape when reading from the file. Converts
+     * each char to an integer and adds it to the tape.
      *
      * @param line - line to be read from file input
      */
@@ -75,20 +85,29 @@ public class TM {
 
     /**
      * Simulates the Turing Machine.
+     *
      */
     public void simulate() {
         boolean isDone = false;
+        int inputSymbol = 0;
 
-        // Ensure there's at least one element on the tape
+        //Ensure there's at least one element on the tape
         if (tape.isEmpty()) {
             tape.add(0);
         }
 
-        // Run the simulation until it's marked as finished or reaches the end state
+        //Run the simulation until it's done
         while (!isDone && currIndex >= 0) {
-            executeCurrentTransition();
 
-            // Check for the termination condition
+            //Executes the transition based on the current state and the symbol under the tape head.
+            inputSymbol = tape.get(tapeIndex);      //Retrieve the current input symbol from the tape
+            TMTransition transition = currentStates.get(currIndex).getTransition(inputSymbol);      //Fetch the transition details based on the current state and input symbol
+
+            tape.set(tapeIndex, transition.getWriteState());        //Set the transition
+            currIndex = transition.getNextState();
+            adjustTapeHeadPosition(transition.getMove());
+
+            //Check for the tape is done
             if (currIndex == numStates - 1) {
                 isDone = true;
             }
@@ -96,19 +115,7 @@ public class TM {
     }
 
     /**
-     * Executes the transition based on the current state and the symbol under the tape head.
-     */
-    private void executeCurrentTransition() {
-        int inputSymbol = tape.get(tapeIndex); //Retrieve the current input symbol from the tape
-        TMTransition transition = currentStates.get(currIndex).getTransition(inputSymbol);   //Fetch the transition details based on the current state and input symbol
-
-        tape.set(tapeIndex, transition.getWriteState());    //Apply the transition: write value, move tape head, and update state
-        currIndex = transition.getNextState();
-        adjustTapeHeadPosition(transition.getMove());
-    }
-
-    /**
-     *
+     *  Adjust the head position of the tape to either the left or right.
      *
      * @param direction
      */
@@ -116,13 +123,13 @@ public class TM {
         if (direction == 'L') {
             tapeIndex--;        //Moves tape to the left
             if (tapeIndex < 0) {
-                tape.add(0, 0);
+                tape.add(0, 0);     //Adds default value when tape goes too far left
                 tapeIndex = 0;
             }
         } else if (direction == 'R') {
             tapeIndex++; //Moves tape to the right
             if (tapeIndex >= tape.size()) {
-                tape.add(0);
+                tape.add(0);    //Adds default value when tape goes too far right
             }
         }
     }

@@ -3,14 +3,17 @@ package TM;
 import java.util.ArrayList;
 
 /**
+ * Represents a turing machine state. Is able to add
+ * transitions.
  *
- *
+ * @author jackgarcia joshmiller
  */
 public class TMState extends State {
 
     private final ArrayList<TMTransition> transitions;
 
     /**
+     * Constructor for TMState
      *
      * @param length
      */
@@ -23,7 +26,9 @@ public class TMState extends State {
     }
 
     /**
-     *
+     * Creates a new TMTransition and adds it to
+     * our ArrayList which tracks the transitions for
+     * each TMState.
      *
      * @param currentState
      * @param nextState
@@ -35,7 +40,8 @@ public class TMState extends State {
     }
 
     /**
-     *
+     * Returns the transition at the specified
+     * index.
      *
      * @param index
      * @return
