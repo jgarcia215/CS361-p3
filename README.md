@@ -10,16 +10,15 @@ This program is a Turing machine simulator designed to interpret and execute a v
 
 ## Reflection
 
-The lectures provided us with a robust theoretical foundation which was crucial for understanding the operational 
-mechanics of Turing machines. Implementing the tape manipulation and transition functions was particularly challenging. 
-We encountered issues with the transition logic that resulted in unexpected behavior, but these were resolved after 
-several debugging sessions. This project not only tested our problem-solving skills but also deepened our appreciation 
-for the complexity of Turing machines.
+The lectures provided us with a robust theoretical foundation which was crucial for understanding Turing machines. 
+Implementing the tape manipulation and transition functions was particularly challenging. 
+We encountered issues with the transition logic that resulted in unexpected behavior, but these were resolved after
+continuous debugging. The biggest challenges was knowing where to start. With zero starter code and a complex
+topic, it seemed extremely challenging. Using object-oriented design patterns did help in breaking down
+the complexity and gave us insight into the behind the scenes of how to simulate a Turing Machine.
 
-Our team maintained excellent communication throughout the project, clearly dividing tasks to avoid any overlap and 
-ensure coherent integration of different components. As each module was completed, we conducted thorough tests to ensure 
-that all parts worked seamlessly together. This project was an engaging and educational extension of our previous 
-coursework, highlighting the practical applications of Turing machines in computer science.
+We maintained excellent communication throughout the project, clearly dividing tasks to avoid any overlap and 
+avoided any merge conflicts. Overall, it was a challenging project but enjoyable.
 
 ## Compiling and Using
 
